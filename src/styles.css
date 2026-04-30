@@ -1,0 +1,107 @@
+/* VITAE · Respiratory Performance — Global Styles */
+/* New brand: cream bg, teal accent, Aboreto display, Inter UI */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body {
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  background: #E8E5E0;
+  -webkit-font-smoothing: antialiased;
+}
+button { font-family: inherit; cursor: pointer; }
+
+/* Aboreto font — loaded from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+/* TopLuxury — VITAE logo font */
+@font-face {
+  font-family: 'TopLuxury';
+  src: url('./assets/TopLuxury.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.vitae-logo-font {
+  font-family: 'TopLuxury', 'Aboreto', sans-serif;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* ─── Breath animations ────────────────────────────── */
+@keyframes vitaeBreath {
+  0%   { transform: scale(1);     opacity: 0.55; }
+  40%  { transform: scale(1.06);  opacity: 0.85; }
+  100% { transform: scale(1);     opacity: 0.55; }
+}
+@keyframes vitaeBreathSlow {
+  0%   { transform: scale(1);    opacity: 0.4; }
+  45%  { transform: scale(1.12); opacity: 0.7; }
+  100% { transform: scale(1);    opacity: 0.4; }
+}
+@keyframes vitaeBreathHalo {
+  0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.45; }
+  45%  { transform: translate(-50%, -50%) scale(1.18); opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.45; }
+}
+@keyframes vitaeFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
+}
+@keyframes vitaeFadeUp {
+  0%   { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes vitaeDraw {
+  from { stroke-dashoffset: var(--len, 1000); }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes vitaeSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes vitaePulse {
+  0%,100% { opacity: 0.6; }
+  50%     { opacity: 1; }
+}
+
+/* ─── Utility classes ─────────────────────────────── */
+.vitae-num {
+  font-family: 'Aboreto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.vitae-display {
+  font-family: 'Aboreto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.vitae-display-caps {
+  font-family: 'Aboreto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.vitae-ui {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+.vitae-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.vitae-scroll::-webkit-scrollbar { display: none; }
+.vitae-scroll { scrollbar-width: none; }
+
+/* ─── Focus / accessibility ─────────────────────── */
+button:focus-visible {
+  outline: 2px solid #5ABEAA;
+  outline-offset: 2px;
+}
